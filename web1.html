@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('web1.jpg');
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"], 
+        input[type="number"],
+        input[type="date"],
+        select, 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .inline-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .inline-group label {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .reset {
+            background: #ccc;
+            color: black;
+        }
+
+        .reset:hover {
+            background: #999;
+        }
+
+        .submit {
+            background: #28a745;
+            color: white;
+        }
+
+        .submit:hover {
+            background: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .inline-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2><marquee>Registration Form</marquee></h2>
+        <form>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Your First Name..." required>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Your Last Name..." required>
+            <label for="email">Email Id:</label>
+            <input type="text" id="email" name="email" placeholder="Your Email Id.." required>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <label for="mobile">Mobile No:</label>
+            <input type="number" id="mobile" name="mobile" placeholder="91+.." required>
+            <label>Gender:</label>
+            <div class="inline-group">
+                <input type="radio" name="gender" id="male" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="Female">
+                <label for="female">Female</label>
+            </div>
+            <label>Languages Known:</label>
+            <div class="inline-group">
+                <input type="checkbox" id="english" name="language" value="English">
+                <label for="english">English</label>
+                <input type="checkbox" id="hindi" name="language" value="Hindi">
+                <label for="hindi">Hindi</label>
+                <input type="checkbox" id="spanish" name="language" value="Spanish">
+                <label for="spanish">Spanish</label>
+                <input type="checkbox" id="french" name="language" value="French">
+                <label for="french">French</label>
+                <input type="checkbox" id="german" name="language" value="German">
+                <label for="german">German</label>
+                <input type="checkbox" id="other" name="language" value="Other">
+                <label for="other">Other</label>
+            </div>
+            <label for="subjects">Subject of Interest:</label>
+            <select id="subjects" name="subjects">
+                <option value="Math">Maths</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="Zoology">Zoology</option>
+            </select>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" placeholder="Ex.. near Hospital" rows="4"></textarea>
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" pattern="\d{6}" maxlength="6" required>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="Other">Other</option>
+            </select>
+            <div class="button-container">
+                <button type="reset" class="reset">Reset</button>
+                <button type="submit" class="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
